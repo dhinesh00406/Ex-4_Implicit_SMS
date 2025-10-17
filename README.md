@@ -28,14 +28,75 @@ Step 7: Save and run the application.
 
 ## PROGRAM:
 ```
-/*
 Program to create and design an android application Send SMS using Intent.
-Developed by:
-Registeration Number :
-*/
+Developed by: RAMYA S
+Registeration Number : 212222040130
+```
+
+## MainActivity.Java:
+```
+package com.example.exp_4;
+
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        Button mbutton=(Button) findViewById(R.id.smsButton);
+        mbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms","9840155373",null));
+                intent.putExtra("sms_body","SMS using Intent");
+                startActivity(intent);
+            }
+        });
+    }
+}
+```
+## activitymain.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/smsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="send sms"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>
 ```
 
 ## OUTPUT
+<img width="403" height="785" alt="369591590-ec40a8f2-a057-4e96-8f75-2703828013a8" src="https://github.com/user-attachments/assets/38112421-53a1-403d-9402-3ec349176acd" />
+
+<img width="380" height="763" alt="369591617-5ad22f55-6e81-485b-abce-0d37f8fa5e6e" src="https://github.com/user-attachments/assets/d3c64a0b-e658-40bd-966e-18db0ce738c2" />
+
+<img width="387" height="787" alt="369591627-fdb0590a-8ced-4dae-b52d-11ab7d77f1c8" src="https://github.com/user-attachments/assets/07210ad8-fee6-4b25-b6e9-c7c30b7cf726" />
 
 
 
